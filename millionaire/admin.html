@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wer wird Millionär - Fragenverwaltung</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-[#000B3B] min-h-screen text-white">
+    <!-- Header -->
+    <header class="py-4 px-6 bg-[#000824] shadow-lg">
+        <nav class="flex justify-between items-center max-w-6xl mx-auto">
+            <h1 class="text-3xl font-bold text-yellow-400">Wer wird Millionär? - Fragenverwaltung</h1>
+            <a href="index.html" class="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-lg transition-colors duration-300 flex items-center">
+                <i class="fas fa-gamepad mr-2"></i>
+                Zum Spiel
+            </a>
+        </nav>
+    </header>
+
+    <!-- Question Management Area -->
+    <main class="container mx-auto px-4 py-8">
+        <!-- Question List -->
+        <div class="mb-8">
+            <h2 class="text-2xl font-bold mb-4">Vorhandene Fragen</h2>
+            <div id="questionList" class="space-y-4">
+                <!-- Questions will be listed here -->
+            </div>
+        </div>
+
+        <!-- Add New Question Form -->
+        <div class="bg-[#000824] p-6 rounded-xl">
+            <h2 class="text-2xl font-bold mb-6">Neue Frage Hinzufügen</h2>
+            <form id="questionForm" class="space-y-4">
+                <div>
+                    <label class="block mb-2">Frage:</label>
+                    <textarea id="questionInput" class="w-full p-2 rounded bg-[#000B3B] border border-blue-400" rows="3" required></textarea>
+                </div>
+                <div>
+                    <label class="block mb-2">Antworten:</label>
+                    <div class="space-y-3">
+                        <div class="flex items-center gap-2">
+                            <input type="radio" name="correctAnswer" value="A" required>
+                            <input type="text" placeholder="Antwort A" class="flex-grow p-2 rounded bg-[#000B3B] border border-blue-400" required>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <input type="radio" name="correctAnswer" value="B">
+                            <input type="text" placeholder="Antwort B" class="flex-grow p-2 rounded bg-[#000B3B] border border-blue-400" required>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <input type="radio" name="correctAnswer" value="C">
+                            <input type="text" placeholder="Antwort C" class="flex-grow p-2 rounded bg-[#000B3B] border border-blue-400" required>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <input type="radio" name="correctAnswer" value="D">
+                            <input type="text" placeholder="Antwort D" class="flex-grow p-2 rounded bg-[#000B3B] border border-blue-400" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex justify-end">
+                    <button type="submit" class="px-4 py-2 bg-blue-600 hover:bg-blue-700 rounded transition-colors duration-300">
+                        Frage Hinzufügen
+                    </button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <script src="admin.js"></script>
+</body>
+</html>
