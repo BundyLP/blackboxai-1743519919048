@@ -1,0 +1,208 @@
+/* Custom styles on top of Tailwind */
+
+/* Base styles */
+body {
+    background-image: linear-gradient(to bottom, #000B3B, #000824);
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Money ladder styling */
+#moneyLadder li {
+    transition: all 0.3s ease;
+    opacity: 0.7;
+}
+
+#moneyLadder li.active {
+    background-color: #1E40AF;
+    border: 1px solid #60A5FA;
+    opacity: 1;
+    transform: scale(1.05);
+    font-weight: bold;
+}
+
+#moneyLadder li.secured {
+    background-color: #1E3A8A;
+    border: 1px solid #3B82F6;
+    opacity: 0.9;
+}
+
+/* Answer button styling */
+.answer-btn {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid #3B82F6;
+}
+
+.answer-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.1),
+        transparent
+    );
+    transition: 0.5s;
+}
+
+.answer-btn:hover::before {
+    left: 100%;
+}
+
+/* Correct answer animation */
+.answer-btn.correct {
+    background-color: #065F46 !important;
+    border-color: #34D399 !important;
+    animation: pulse 1s infinite;
+}
+
+/* Wrong answer animation */
+.answer-btn.wrong {
+    background-color: #7F1D1D !important;
+    border-color: #F87171 !important;
+    animation: shake 0.5s;
+}
+
+/* Selected answer state */
+.answer-btn.selected {
+    background-color: #1E40AF !important;
+    border-color: #60A5FA !important;
+}
+
+/* Modal animations */
+#settingsModal {
+    transition: opacity 0.3s ease;
+}
+
+#settingsModal.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+#settingsModal > div {
+    transition: transform 0.3s ease;
+}
+
+#settingsModal.hidden > div {
+    transform: scale(0.95);
+}
+
+/* Form input focus states */
+input[type="text"],
+textarea {
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus,
+textarea:focus {
+    outline: none;
+    border-color: #60A5FA;
+    box-shadow: 0 0 0 2px rgba(96, 165, 250, 0.2);
+}
+
+/* Radio button custom styling */
+input[type="radio"] {
+    appearance: none;
+    width: 1.2em;
+    height: 1.2em;
+    border: 2px solid #3B82F6;
+    border-radius: 50%;
+    margin-right: 0.5em;
+    position: relative;
+    cursor: pointer;
+}
+
+input[type="radio"]:checked {
+    background-color: #3B82F6;
+}
+
+input[type="radio"]:checked::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 0.6em;
+    height: 0.6em;
+    background-color: white;
+    border-radius: 50%;
+}
+
+/* Animations */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.02);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes shake {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-5px);
+    }
+    75% {
+        transform: translateX(5px);
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    #moneyLadder {
+        display: flex;
+        flex-direction: column-reverse;
+        max-height: 200px;
+        overflow-y: auto;
+    }
+
+    .answer-btn {
+        font-size: 0.9rem;
+        padding: 0.75rem;
+    }
+}
+
+/* Loading spinner */
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid #3B82F6;
+    border-top: 4px solid transparent;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Question transition */
+.question-fade {
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
