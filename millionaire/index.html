@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wer wird Millionär</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-[#000B3B] min-h-screen text-white">
+    <!-- Header -->
+    <header class="py-4 px-6 bg-[#000824] shadow-lg">
+        <nav class="flex justify-between items-center max-w-6xl mx-auto">
+            <h1 class="text-3xl font-bold text-yellow-400">Wer wird Millionär?</h1>
+            <a href="admin.html" class="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-lg transition-colors duration-300 flex items-center">
+                <i class="fas fa-cog mr-2"></i>
+                Fragen Verwalten
+            </a>
+        </nav>
+    </header>
+
+    <!-- Main Game Area -->
+    <main class="container mx-auto px-4 py-8 flex flex-col md:flex-row gap-8">
+        <!-- Question and Answers Section -->
+        <div class="flex-grow flex flex-col justify-center items-center space-y-8">
+            <div id="questionContainer" class="w-full max-w-2xl bg-[#000B3B] p-6 rounded-xl border-2 border-blue-400 shadow-xl">
+                <p id="questionText" class="text-xl text-center mb-8">Welche Farbe hat der Himmel an einem klaren Tag?</p>
+                <div class="grid grid-cols-1 gap-4">
+                    <button class="answer-btn bg-[#000824] hover:bg-blue-700 p-4 rounded-lg text-left transition-colors duration-300">
+                        A: Blau
+                    </button>
+                    <button class="answer-btn bg-[#000824] hover:bg-blue-700 p-4 rounded-lg text-left transition-colors duration-300">
+                        B: Grün
+                    </button>
+                    <button class="answer-btn bg-[#000824] hover:bg-blue-700 p-4 rounded-lg text-left transition-colors duration-300">
+                        C: Rot
+                    </button>
+                    <button class="answer-btn bg-[#000824] hover:bg-blue-700 p-4 rounded-lg text-left transition-colors duration-300">
+                        D: Gelb
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Money Ladder -->
+        <div class="md:w-64 bg-[#000824] p-4 rounded-xl">
+            <ul class="space-y-2" id="moneyLadder">
+                <li class="p-2 text-yellow-400 font-bold border border-yellow-400 rounded">€1.000.000</li>
+                <li class="p-2">€500.000</li>
+                <li class="p-2">€250.000</li>
+                <li class="p-2">€125.000</li>
+                <li class="p-2">€64.000</li>
+                <li class="p-2">€32.000</li>
+                <li class="p-2">€16.000</li>
+                <li class="p-2">€8.000</li>
+                <li class="p-2">€4.000</li>
+                <li class="p-2">€2.000</li>
+                <li class="p-2">€1.000</li>
+                <li class="p-2">€500</li>
+                <li class="p-2">€300</li>
+                <li class="p-2">€200</li>
+                <li class="p-2">€100</li>
+            </ul>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
